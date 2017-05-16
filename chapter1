@@ -1,0 +1,65 @@
+1，选择数据库 不区分大小写，关键字使用大写，列名表名使用小写
+use database;
+
+show databases;
+
+show tables;
+
+show columns from customers;  =  describe customers;
+
+2, 检索语句
+SELECT 
+
+检索单列
+select name from customers;
+
+检索多列
+SELECT id, name, price FROM customers;
+
+SELECT * FROM customers;
+
+检索某一列所有不相同的行
+SELECT DISTINCCT id FROM customers;
+
+3, 排序检索数据 ORDER BY
+SELECT name FROM customers ORDER BY name;
+
+按多列排序
+SELECT id,name,price FROM customers ORDER BY price ,name (先按price排序，price相同，按name排)
+
+指定方向排序
+SELECT id,name,price FROM customers ORDER BY price DESC;  (DESC 只应用到直接位于其前面的列名)
+
+
+4， 过滤数据 WHERE
+
+SELECT name, price from customers WHERE price =2.5;
+
+空值检查
+SELECT name, price from customers WHERE price IS NULL;
+
+AND的使用  OR的使用
+SELECT name, price from customers WHERE price IS NULL AND id=1003;
+
+
+AND 与 OR 混合，需要注意次序，加括号
+
+IN操作符
+NOT IN 操作符
+
+5， 通配符
+SELECT id, name FROM customers WHERE name LIKE 'jet%'
+
+通配符% 不能通配NULL
+
+下划线通配符：匹配一个字符
+
+6，使用正则表达式 REGEXP
+SELECT name FROM customers WHERE name REGEXP '[123] Ton'  ORDER BY name
+
+
+
+
+
+
+
