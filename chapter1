@@ -57,6 +57,12 @@ SELECT id, name FROM customers WHERE name LIKE 'jet%'
 6，使用正则表达式 REGEXP
 SELECT name FROM customers WHERE name REGEXP '[123] Ton'  ORDER BY name
 
+SELECT name FROM customers WHERE name REGEXP '1|2|3 Ton'  ORDER BY name
+
+
+
+
+
 
 
 
